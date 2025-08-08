@@ -1,23 +1,17 @@
-# This tells the CMS to connect to your GitHub repository using the Vercel backend
 backend:
-  name: vercel # This line has been changed from git-gateway
-  branch: main
+  name: vercel # Use the Vercel backend
+  branch: main # Your main branch in GitHub
 
-# This tells the CMS where to upload images you add to your articles
-media_folder: "public/uploads"
-public_folder: "/uploads"
+media_folder: "public/uploads" # Where to store images
+public_folder: "/uploads" # How to access images
 
-# This defines the "collections" of content you can edit. We only have one: Posts.
 collections:
-  - name: "posts" # Used in routes, e.g., /admin/collections/posts
-    label: "Posts" # Used in the UI
-    folder: "src/content/posts" # The folder where your articles will be stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+  - name: "blog" # A collection named "blog"
+    label: "Blog" # What to call it in the UI
+    folder: "src/content/blog" # Where to save the files
+    create: true # Allow creating new posts
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields for each post
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Publish Date", name: "publishDate", widget: "datetime"}
-      - {label: "Cover Image", name: "coverImage", widget: "image"}
-      - {label: "Tags", name: "tags", widget: "list", default: ["others"]}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}

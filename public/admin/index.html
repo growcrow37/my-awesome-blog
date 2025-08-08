@@ -1,20 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script src="https://unpkg.com/decap-cms-backend-vercel@^3.0.0/dist/decap-cms-backend-vercel.js"></script>
 </head>
 <body>
   <script>
-    // This is the "waiter". It waits for the page to be ready.
-    window.addEventListener('DOMContentLoaded', (event) => {
-      // Now we can be sure that CMS and VercelCmsBackend are loaded and ready.
-      CMS.registerBackend('vercel', VercelCmsBackend.default);
-      CMS.init();
-    });
+    CMS.init();
   </script>
 </body>
 </html>
