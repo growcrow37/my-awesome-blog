@@ -1,7 +1,7 @@
-# This tells the CMS to connect to your GitHub repository
+# This tells the CMS to connect to your GitHub repository using the Vercel backend
 backend:
-  name: git-gateway
-  branch: main # Or master, depending on your repository's default branch
+  name: vercel # This line has been changed from git-gateway
+  branch: main
 
 # This tells the CMS where to upload images you add to your articles
 media_folder: "public/uploads"
