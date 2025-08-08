@@ -9,10 +9,12 @@
 </head>
 <body>
   <script>
-    // Register the Vercel backend, overriding any other defaults
-    CMS.registerBackend('vercel', VercelCmsBackend.default);
-    // Initialize the CMS
-    CMS.init();
+    // This is the "waiter". It waits for the page to be ready.
+    window.addEventListener('DOMContentLoaded', (event) => {
+      // Now we can be sure that CMS and VercelCmsBackend are loaded and ready.
+      CMS.registerBackend('vercel', VercelCmsBackend.default);
+      CMS.init();
+    });
   </script>
 </body>
 </html>
